@@ -1,18 +1,19 @@
-import 'package:android_chempionat/screeens/onboarding_screen.dart';
+import 'package:android_chempionat/page_route/page_route.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
-  // This widget is the root of your application.
+  final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: OnboardingScreen(),
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
     );
   }
-} 
+}
