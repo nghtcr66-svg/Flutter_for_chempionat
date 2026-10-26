@@ -7,7 +7,7 @@
 
 
 import 'package:android_chempionat/app_colors.dart';
-import 'package:android_chempionat/models/onboarding_model.dart';
+import 'package:android_chempionat/models/OnBoardingModel.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -124,7 +124,6 @@ class CreateAccountScreen extends StatelessWidget{
                       width: 64,
                       child: TextField(
                         decoration: InputDecoration(
-                          //--В душе не чаю как это реализовать но Вивальди афигенный------
                           hintText: '+234',   
                           enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
                             borderSide: BorderSide(color: AppColors.primary),

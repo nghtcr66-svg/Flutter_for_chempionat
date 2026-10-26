@@ -1,5 +1,5 @@
 import 'package:android_chempionat/app_colors.dart';
-import 'package:android_chempionat/models/onboarding_model.dart';
+import 'package:android_chempionat/models/OnBoardingModel.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
 import 'package:android_chempionat/screeens/create_account_screen.dart';
 import 'package:auto_route/auto_route.dart';
