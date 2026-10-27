@@ -1,13 +1,8 @@
-
-
-//----------TODO Надо будет форму ввода просто в модель вывести так намного меньше кода будет ---
-
-// Я ВСЕ ПЕРЕДЛАЮ ПОТОМ ЭТО ТОЛЬКО ДЛЯ "ЗАТЫЧКИ" ДЛЯ ПОКАЗА В ПОНЕДЕЛЬНИК ЧТОБЫ НЮАНЕМСЫ СПРОСИТЬ
-
-
-
 import 'package:android_chempionat/app_colors.dart';
 import 'package:android_chempionat/models/OnBoardingModel.dart';
+import 'package:android_chempionat/models/widgets/CustomFieldWidget.dart';
+import 'package:android_chempionat/models/widgets/PasswordFieldwidget.dart';
+import 'package:android_chempionat/models/widgets/PhoneFieldwidget.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,11 +12,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 @RoutePage()
 class CreateAccountScreen extends StatelessWidget{
-  // CreateAccountScreen({super.key});
+  CreateAccountScreen({super.key});
 
-  // late final TextEditingController? controller;
+  late final TextEditingController? controller;
 
-
+  //-------------Данные для подставлеиня-------------------------------------
   final formdata = OnboardingModel(
     text_title: 'Create Account',
     text_desc: 'Hi, kindly fill in the form to proceed combat',
@@ -70,152 +65,145 @@ class CreateAccountScreen extends StatelessWidget{
                 ),
                 child: Image.asset(formdata.picture_path),
               ),
-              //-------------Имя Пользователя--------------------------------
+              //-------------------Текст розовый-------------------------------------
+              Padding(
+                padding: EdgeInsetsGeometry.only(
+                  top: 40.0,
+                  left: 24.0,
+                ),
+                child: Text(
+                  formdata.text_title,
+                  textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                    fontSize: 26,
+                    fontWeight:  FontWeight.bold,
+                    color: AppColors.primary,
+                    height: 1.3
+                  )
+                ),
+              ),
+              //-----------Текст верхний черный---------------------------------
+              Padding(
+                padding: EdgeInsetsGeometry.only(
+                  top: 40.0,
+                  left: 24.0,
+                ),
+                child: Text(
+                  formdata.text_desc,
+                  textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight:  FontWeight.bold,
+                    color: AppColors.textDark,
+                    height: 1.3
+                  )
+                ),
+              ),
+              //------------Поле Имя---------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  vertical: 24.0,
-                  horizontal: 48.0
+                  horizontal: 56,
+                  vertical: 24
                 ),
-                // Погмогал Claude Code
-                //-------------Форма--------------------------------
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: 'Full Name',            // серый текст-подсказка
-                  enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                    borderSide: BorderSide(color: AppColors.primary),
-                  ),
-                  focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                  borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                  ),
-                  ),
+                child: CustomFieldWidget(
+                  text_hint: 'Full Name',
+                  controller: TextEditingController()
                 ),
               ),
-              //-----------------------Полное имя------------------------------------
+              //-----------Поле юзернейм-------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  vertical: 24.0,
-                  horizontal: 48.0
+                  horizontal: 56,
+                  vertical: 24
                 ),
-                // Погмогал Claude Code
-                //-------------Ник----------------------------
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: 'User Name',            // серый текст-подсказка
-                  enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                    borderSide: BorderSide(color: AppColors.primary),
-                  ),
-                  focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                  borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                  ),
-                  ),
+                child: CustomFieldWidget(
+                  text_hint: 'User Name',
+                  controller: TextEditingController()
                 ),
               ),
-              //-------------------Номер телефона-------------------------------------------
+              //--------Номер телефона---------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: 48.0
+                  horizontal: 56,
+                  vertical: 24
                 ),
-                child: Row(
-                  //-------хз ьза что оно отвечает----------------
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //
-                    const SizedBox(
-                      width: 64,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: '+234',   
-                          enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                            borderSide: BorderSide(color: AppColors.primary),
-                          ),
-                          focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                            borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                          ),
-                        ),
-                        //-----я афигею если это заработает-------
-                        keyboardType: TextInputType.phone,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 16,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Your Phone',   
-                          enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                            borderSide: BorderSide(color: AppColors.primary),
-                          ),
-                          focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                            borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                          ),
-                        ),
-                        //-----я афигею если это заработает-------
-                        keyboardType: TextInputType.phone,
-                      ),
-                    ),
-                  ],
-                ),
+                child: PhoneFieldModel(
+                  phoneController:TextEditingController() ,
+                  regController: TextEditingController()
+                )
               ),
-              //-----------------------Email------------------------------------
+              //-------Пароль----------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  vertical: 24.0,
-                  horizontal: 48.0
+                  horizontal: 56,
+                  vertical: 24
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: 'Email',            // серый текст-подсказка
-                  enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                      borderSide: BorderSide(color: AppColors.primary),
-                    ),
-                  focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                    borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                    ),
-                  ),
-                ),
+                child: PasswordFieldwidget(
+                  controller: TextEditingController(),
+                  hintText: 'Password'
+                )
               ),
-              //----------Пароли------------------------------
+              //-------Подтверждение пароля---------------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  vertical: 24.0,
-                  horizontal: 48.0
+                  horizontal: 56,
+                  vertical: 24
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: 'Password',            // серый текст-подсказка
-                  enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                      borderSide: BorderSide(color: AppColors.primary),
-                    ),
-                  focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                    borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                    ),
-                  ),
-                  
-                ),
+                child: PasswordFieldwidget(
+                  controller: TextEditingController(),
+                  hintText: 'Confirm Password'
+                )
               ),
+              //--------------------Кнопка-----------------------------------
               Padding(
-                padding: EdgeInsetsGeometry.symmetric(
-                  vertical: 24.0,
-                  horizontal: 48.0
+                padding: EdgeInsetsGeometry.only(
+                  top: 40.0,
+                  left: 3.0,
+                  right: 14.0,
                 ),
-                child: TextField(
-                  decoration: InputDecoration(
-                  hintText: 'confirm Password',            // серый текст-подсказка
-                  enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
-                      borderSide: BorderSide(color: AppColors.primary),
-                    ),
-                  focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
-                    borderSide: BorderSide(color: AppColors.fieldBorder, width: 2),
-                    ),
-                  ),
-                  
-                ),
-              ),
-              Padding(padding: EdgeInsetsGeometry.only(
-                top: 40.0,
-                left: 3.0,
-                right: 14.0,
-              ),
                 child: formdata.button_widget,
+              ),
+              //-------------------Черный текст внизу----------------------------------
+              Padding(
+                padding: EdgeInsetsGeometry.only(
+                  top: 189.0,
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                child: Text(
+                  'Already have an account?',
+                  textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                    fontSize: 16,
+                    fontWeight:  FontWeight.bold,
+                    color: AppColors.textDark,
+                    height: 1.3
+                  )
+                ),
+              ),
+              //----------Текст внизу с подчеркиванием----------------------------
+              Padding(
+                padding: EdgeInsetsGeometry.only(
+                  bottom: 36.0,
+                  top: 4.0,
+                  left: 16.0,
+                  right: 16.0,
+                ),
+                child: TextButton(
+                  onPressed: (){},
+                  child: Text(
+                    'Login',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: AppColors.primary,
+                      height: 1.3
+                    ).copyWith(
+                      decoration: TextDecoration.underline,
+                      color: AppColors.primary
+                    )
+                  )
+                ),
               ),
             ],
           ),

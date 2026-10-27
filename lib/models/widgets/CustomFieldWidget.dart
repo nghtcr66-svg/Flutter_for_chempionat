@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 //------------------Делаем кастомный класс родитель для заполнения чтобы просто потом вставлять данные--------------------
-class CustomFieldModel extends StatelessWidget{
+class CustomFieldWidget extends StatelessWidget{
   //Принимаем прям усе что только можно прикол в том что доп функции всегда есть но по-умолчанию не юзаем
   final String text_hint;
   final TextEditingController controller;
@@ -18,7 +18,7 @@ class CustomFieldModel extends StatelessWidget{
 
 
 
-  CustomFieldModel({
+  CustomFieldWidget({
     super.key,
     required this.text_hint,
     this.inputType = TextInputType.text,

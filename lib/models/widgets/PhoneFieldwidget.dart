@@ -1,6 +1,6 @@
+import 'package:android_chempionat/models/widgets/CustomFieldWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'CustomFieldModel.dart';
 
 class PhoneFieldModel extends StatelessWidget{
   final TextEditingController phoneController;
@@ -23,7 +23,7 @@ class PhoneFieldModel extends StatelessWidget{
         SizedBox(
           width: 64,
           //Юзаем готовый виджет
-          child: CustomFieldModel(
+          child: CustomFieldWidget(
             controller: regController,
             text_hint: '+231',
             inputType: TextInputType.phone,
@@ -37,13 +37,16 @@ class PhoneFieldModel extends StatelessWidget{
             ],
           )
         ),
-          SizedBox(
-            width: 187,
-            child: CustomFieldModel(
-              text_hint: 'yourPhone',
-              controller: phoneController,
-              inputType: TextInputType.phone, 
-              maxLenght: 4,
+        SizedBox(
+          width: 45,
+        ),
+        SizedBox(
+          width: 187,
+          child: CustomFieldWidget(
+            text_hint: 'yourPhone',
+            controller: phoneController,
+            inputType: TextInputType.phone, 
+            maxLenght: 4,
           )
         ),
       ],
