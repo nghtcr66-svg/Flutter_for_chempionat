@@ -75,7 +75,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingModel(
       text_title: 'Schedule Games With Friends ',
       text_desc: 'Easily create an upcoming event and get ready for battle. Yeah! real combat fella.',
-      button_widget: ElevatedButton(onPressed: (){context.router.push(const CreateAccountRoute());},
+      button_widget: ElevatedButton(onPressed: (){context.router.push(LoginRoute());},
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.background,
