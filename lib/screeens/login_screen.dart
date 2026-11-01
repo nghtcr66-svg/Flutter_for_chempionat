@@ -4,6 +4,7 @@ import 'package:android_chempionat/models/widgets/ConnectWithWidget.dart';
 import 'package:android_chempionat/models/widgets/CustomFieldWidget.dart';
 import 'package:android_chempionat/models/widgets/PasswordFieldwidget.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
+import 'package:android_chempionat/screeens/landing_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,33 +13,6 @@ import 'package:google_fonts/google_fonts.dart';
 class LoginScreen extends StatelessWidget{
   LoginScreen({super.key});
 
-  final form_data = OnboardingModel(
-    text_title: 'Welcome Back!',
-    text_desc: 'Hi, Kindly login to continue battle',
-    button_widget: ElevatedButton(
-      onPressed: (){},
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.background,
-        //
-        shape: const StadiumBorder(),
-        padding: const EdgeInsets.symmetric(
-        horizontal: 16.0,
-        vertical: 16.0
-        ),
-        elevation: 0,
-      ),
-      child: Text(
-        'Let’s Combat!',
-        style: GoogleFonts.poppins( // Применяем шрифт Poppins (или любой другой из Google Fonts)
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
-          color: Colors.white, 
-          height: 1.3,
-        ),
-      )
-    ),
-    picture_path: 'assets/5.png');
 
 
 
@@ -49,6 +23,38 @@ class LoginScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
+
+    final form_data = OnboardingModel(
+        text_title: 'Welcome Back!',
+        text_desc: 'Hi, Kindly login to continue battle',
+        button_widget: ElevatedButton(
+            onPressed: (){context.router.push(LandingRoute());},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primary,
+              foregroundColor: AppColors.background,
+              //
+              shape: const StadiumBorder(),
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 16.0,
+                  vertical: 16.0
+              ),
+              elevation: 0,
+            ),
+            child: Text(
+              'Let’s Combat!',
+              style: GoogleFonts.poppins( // Применяем шрифт Poppins (или любой другой из Google Fonts)
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                height: 1.3,
+              ),
+            )
+        ),
+        picture_path: 'assets/5.png');
+
+
+
     return Scaffold(
       body: Center(
         child: Column(

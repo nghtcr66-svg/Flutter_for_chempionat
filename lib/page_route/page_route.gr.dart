@@ -1,5 +1,5 @@
-// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 
 // **************************************************************************
 // AutoRouterGenerator
@@ -52,6 +52,22 @@ class CreateAccountRouteArgs {
 
   @override
   int get hashCode => key.hashCode;
+}
+
+/// generated route for
+/// [LandingScreen]
+class LandingRoute extends PageRouteInfo<void> {
+  const LandingRoute({List<PageRouteInfo>? children})
+    : super(LandingRoute.name, initialChildren: children);
+
+  static const String name = 'LandingRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const LandingScreen();
+    },
+  );
 }
 
 /// generated route for

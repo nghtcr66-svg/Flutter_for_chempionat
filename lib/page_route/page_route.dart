@@ -4,6 +4,8 @@ import 'package:android_chempionat/screeens/login_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../screeens/landing_screen.dart';
+
 
 part 'page_route.gr.dart';
 
@@ -15,5 +17,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: OnboardingRoute.page, initial: true),
     AutoRoute(page: CreateAccountRoute.page),
     AutoRoute(page: LoginRoute.page),
+    AutoRoute(page: LandingRoute.page),
   ];
 }
