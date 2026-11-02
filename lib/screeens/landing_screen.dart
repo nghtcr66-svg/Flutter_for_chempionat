@@ -1,7 +1,9 @@
 import 'package:android_chempionat/app_colors.dart';
 import 'package:android_chempionat/models/widgets/ConnectWithWidget.dart';
 import 'package:android_chempionat/models/widgets/LandingContainerWidget.dart';
+import 'package:android_chempionat/page_route/page_route.dart';
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +30,7 @@ class LandingScreen extends StatelessWidget {
           child: Connectwithwidget(
               color: Colors.black,
               icon: Icon(Icons.fax_rounded),
-              onTap: (){}
+              onTap: (){context.router.push((DiscoverRoute()));}
             )
           ),
           Padding(
