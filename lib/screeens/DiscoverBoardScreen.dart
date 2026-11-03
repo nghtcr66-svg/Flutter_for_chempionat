@@ -1,4 +1,4 @@
-import 'package:android_chempionat/app_colors.dart';
+import 'package:android_chempionat/app_refs.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
@@ -87,6 +87,54 @@ class DiscoverScreen extends StatelessWidget {
             )
           )
         ),
+      body: Column(
+        children: [
+          Padding(padding: EdgeInsetsGeometry.symmetric(
+            vertical: 23,
+            horizontal: 10
+          ),
+            child: Row(
+              children: [
+                Padding(padding: EdgeInsetsGeometry.only(
+                  left: 5
+                ), child: Text(
+                  'Trending this week',
+                  style: TextStyle(
+                    color: AppColors.primary,
+                    fontFamily: 'RedHatText',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    height: 28/20
+                  ),
+                ),
+                ),
+                Padding(padding: EdgeInsetsGeometry.only(
+                  left: 90,
+                ),
+                  child: Text(
+                    'View All',
+                    style: TextStyle(
+                        color: AppColors.textDark,
+                        fontFamily: 'RedHatText',
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        height: 12/20
+                    ),
+                  ),
+                ),
+                Padding(
+                    padding: EdgeInsetsGeometry.only(right: 5),
+                    child: IconButton(onPressed: (){}, icon: Icon(
+                        Icons.double_arrow,
+                    ), color: AppColors.primary,
+                    ),
+                )
+              ],
+            ),
+          ),
+
+        ],
+      )
     );
   }
 }

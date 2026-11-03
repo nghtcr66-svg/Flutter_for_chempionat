@@ -1,8 +1,8 @@
-import 'package:android_chempionat/app_colors.dart';
-import 'package:android_chempionat/models/OnBoardingModel.dart';
-import 'package:android_chempionat/models/widgets/CustomFieldWidget.dart';
-import 'package:android_chempionat/models/widgets/PasswordFieldwidget.dart';
-import 'package:android_chempionat/models/widgets/PhoneFieldwidget.dart';
+import 'package:android_chempionat/app_refs.dart';
+import 'package:android_chempionat/models/onboarding_model.dart';
+import 'package:android_chempionat/models/widgets/custom_field_widget.dart';
+import 'package:android_chempionat/models/widgets/password_field_widget.dart';
+import 'package:android_chempionat/models/widgets/phone_field_widget.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -35,12 +35,7 @@ class CreateAccountScreen extends StatelessWidget{
         ),
         child: Text(
           'Let’s Combat!',
-              style: GoogleFonts.poppins( // Применяем шрифт Poppins (или любой другой из Google Fonts)
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white, 
-                height: 1.3,
-            ),
+              style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
           )
         ),
     picture_path: 'assets/4.png'
@@ -75,12 +70,7 @@ class CreateAccountScreen extends StatelessWidget{
                 child: Text(
                   formdata.text_title,
                   textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                    fontSize: 26,
-                    fontWeight:  FontWeight.bold,
-                    color: AppColors.primary,
-                    height: 1.3
-                  )
+                    style: AppTypography.MainPoppins
                 ),
               ),
               //-----------Текст верхний черный---------------------------------
@@ -92,12 +82,7 @@ class CreateAccountScreen extends StatelessWidget{
                 child: Text(
                   formdata.text_desc,
                   textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight:  FontWeight.bold,
-                    color: AppColors.textDark,
-                    height: 1.3
-                  )
+                    style: AppTypography.MainPoppins
                 ),
               ),
               //------------Поле Имя---------------------------------------
@@ -174,12 +159,7 @@ class CreateAccountScreen extends StatelessWidget{
                 child: Text(
                   'Already have an account?',
                   textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight:  FontWeight.bold,
-                    color: AppColors.textDark,
-                    height: 1.3
-                  )
+                    style: AppTypography.MainPoppins
                 ),
               ),
               //----------Текст внизу с подчеркиванием----------------------------
@@ -195,11 +175,7 @@ class CreateAccountScreen extends StatelessWidget{
                   child: Text(
                     'Login',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      color: AppColors.primary,
-                      height: 1.3
-                    )
+                    style: AppTypography.MainPoppins.copyWith(color: AppColors.primary),
                   )
                 ),
               ),

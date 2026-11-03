@@ -1,6 +1,6 @@
-import 'package:android_chempionat/app_colors.dart';
-import 'package:android_chempionat/models/widgets/ConnectWithWidget.dart';
-import 'package:android_chempionat/models/widgets/LandingContainerWidget.dart';
+import 'package:android_chempionat/app_refs.dart';
+import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
+import 'package:android_chempionat/models/widgets/landing_container_widget.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
@@ -36,12 +36,7 @@ class LandingScreen extends StatelessWidget {
           Padding(
               padding: EdgeInsetsGeometry.only(right: 20),
               child: Text('Stone Stellar',
-                style: GoogleFonts.poppins(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  height: 1.3,
-                ),
+                style: AppTypography.MainPoppins
               )
           )
         ],

@@ -1,4 +1,4 @@
-import 'package:android_chempionat/models/widgets/CustomFieldWidget.dart';
+import 'package:android_chempionat/models/widgets/custom_field_widget.dart';
 import 'package:flutter/material.dart';
 
 //TODO Сделать void dispose() чтобы не было утечек памяти

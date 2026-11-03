@@ -5,7 +5,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../screeens/DiscoverBoardScreen.dart';
-import '../screeens/landing_screen.dart';
+import '../screeens/LandingScreen.dart';
 
 
 part 'page_route.gr.dart';

@@ -1,4 +1,4 @@
-import 'package:android_chempionat/app_colors.dart';
+import 'package:android_chempionat/app_refs.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -54,12 +54,7 @@ class LandingcontainerWidget extends StatelessWidget {
                       ),
                       child: Text(
                         text_title,
-                        style: GoogleFonts.poppins(
-                          color: AppColors.background,
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          height: 1.3
-                        ),
+                        style: AppTypography.NormalPoppins
                       ),
                   ),
                   //-------------подзаголовок-----------------------------
@@ -69,11 +64,7 @@ class LandingcontainerWidget extends StatelessWidget {
                   ),
                     child: Text(
                       text_desc,
-                      style: GoogleFonts.poppins(
-                      color: AppColors.background,
-                        fontSize: 14,
-                        height: 1.3
-                      ),
+                      style: AppTypography.NormalPoppins
                     ),
                   ),
                   //-------------------------------Кнопка-----------------------------------

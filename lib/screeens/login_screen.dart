@@ -1,10 +1,10 @@
-import 'package:android_chempionat/app_colors.dart';
-import 'package:android_chempionat/models/OnBoardingModel.dart';
-import 'package:android_chempionat/models/widgets/ConnectWithWidget.dart';
-import 'package:android_chempionat/models/widgets/CustomFieldWidget.dart';
-import 'package:android_chempionat/models/widgets/PasswordFieldwidget.dart';
+import 'package:android_chempionat/app_refs.dart';
+import 'package:android_chempionat/models/onboarding_model.dart';
+import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
+import 'package:android_chempionat/models/widgets/custom_field_widget.dart';
+import 'package:android_chempionat/models/widgets/password_field_widget.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
-import 'package:android_chempionat/screeens/landing_screen.dart';
+import 'package:android_chempionat/screeens/LandingScreen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,12 +43,7 @@ class LoginScreen extends StatelessWidget{
             ),
             child: Text(
               'Let’s Combat!',
-              style: GoogleFonts.poppins( // Применяем шрифт Poppins (или любой другой из Google Fonts)
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                height: 1.3,
-              ),
+              style: AppTypography.MainPoppins.copyWith(color: AppColors.background)
             )
         ),
         picture_path: 'assets/5.png');
@@ -74,12 +69,7 @@ class LoginScreen extends StatelessWidget{
               child: Text(
                   form_data.text_title,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                  fontSize: 26,
-                  fontWeight:  FontWeight.bold,
-                  color: AppColors.primary,
-                  height: 1.3
-                )
+                  style: AppTypography.TittlePoppins
               ),
             ),
             Padding(
@@ -90,12 +80,7 @@ class LoginScreen extends StatelessWidget{
               child: Text(
                   form_data.text_desc,
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight:  FontWeight.bold,
-                  color: AppColors.textDark,
-                  height: 1.3
-                )
+                  style: AppTypography.MainPoppins
               ),
             ),
             Padding(
@@ -126,11 +111,7 @@ class LoginScreen extends StatelessWidget{
                 onPressed: (){},
                 child: Text(
                   'Forgot Password?',
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: AppColors.textDark,
-                    height: 1.3
-                  ).copyWith(
+                  style: AppTypography.NormalPoppins.copyWith(
                     decoration: TextDecoration.underline,
                   )
                 ),
@@ -153,12 +134,7 @@ class LoginScreen extends StatelessWidget{
               child: Text(
                   'Connect With',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  fontWeight:  FontWeight.bold,
-                  color: AppColors.primary,
-                  height: 1.3
-                )
+                  style: AppTypography.TittlePoppins
               ),
             ),
             Padding(
@@ -204,11 +180,7 @@ class LoginScreen extends StatelessWidget{
               child: Text(
                   'Dont Have an Account?',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                  fontSize: 16,
-                  color: AppColors.textDark,
-                  height: 1.3
-                )
+                  style: AppTypography.MainPoppins
               ),
             ),
             Padding(
@@ -221,12 +193,7 @@ class LoginScreen extends StatelessWidget{
                 child: Text(
                   'Create Account',
                   textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    fontWeight:  FontWeight.bold,
-                    color: AppColors.primary,
-                    height: 1.3
-                  )
+                  style: AppTypography.MainPoppins
                 ),
               ),
             )
