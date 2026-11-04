@@ -5,12 +5,16 @@ class Connectwithwidget extends StatelessWidget{
   //в качестве иконки будем принимать текст
   final Widget icon;
   final VoidCallback onTap;
+  final double width;
+  final double height;
 
   Connectwithwidget({
     super.key,
     required this.color,
     required this.icon,
     required this.onTap,
+    required this.width,
+    required this.height
   });
 
   @override
@@ -20,8 +24,8 @@ class Connectwithwidget extends StatelessWidget{
       //делаем его круглым
       customBorder: const CircleBorder(),
       child: Container(
-        width: 56,
-        height: 56,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
           color: color,
           shape: BoxShape.circle

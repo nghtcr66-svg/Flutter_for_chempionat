@@ -81,7 +81,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
         child: Text(
           'Let’s Combat!',
-              style: AppTypography.NormalPoppins
+              style: AppTypography.NormalPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
           )
         ),
       picture_path: 'assets/3.png'

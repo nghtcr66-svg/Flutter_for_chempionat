@@ -14,7 +14,7 @@ class LandingScreen extends StatelessWidget {
 
   final _widht = 615.0;
   final _height = 171.0;
-  final _img_widht = 95.0;
+  final _img_widht = 130.0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,10 @@ class LandingScreen extends StatelessWidget {
           ),
           Padding(padding: EdgeInsetsGeometry.only(right: 10),
           child: Connectwithwidget(
+              width: 56,
+              height: 56,
               color: Colors.black,
-              icon: Icon(Icons.fax_rounded),
+              icon: Image.asset('assets/checker.png'),
               onTap: (){context.router.push((DiscoverRoute()));}
             )
           ),

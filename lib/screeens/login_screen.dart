@@ -4,7 +4,7 @@ import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
 import 'package:android_chempionat/models/widgets/custom_field_widget.dart';
 import 'package:android_chempionat/models/widgets/password_field_widget.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
-import 'package:android_chempionat/screeens/LandingScreen.dart';
+import 'package:android_chempionat/screeens/landing_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget{
             ),
             child: Text(
               'Let’s Combat!',
-              style: AppTypography.MainPoppins.copyWith(color: AppColors.background)
+              style: AppTypography.MainPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
             )
         ),
         picture_path: 'assets/5.png');
@@ -145,6 +145,8 @@ class LoginScreen extends StatelessWidget{
               child: Row(
                 children: [
                   Connectwithwidget(
+                    width: 56,
+                    height: 56,
                     color: Colors.redAccent,
                     icon: Text(
                       'G+',
@@ -159,6 +161,8 @@ class LoginScreen extends StatelessWidget{
                     )
                   ),
                   Connectwithwidget(
+                    width: 56,
+                    height: 56,
                     color: Colors.blueAccent,
                     icon: Text(
                       'f',
@@ -193,7 +197,7 @@ class LoginScreen extends StatelessWidget{
                 child: Text(
                   'Create Account',
                   textAlign: TextAlign.center,
-                  style: AppTypography.MainPoppins
+                  style: AppTypography.MainPoppins.copyWith(color: AppColors.primary, fontWeight: FontWeight.bold)
                 ),
               ),
             )

@@ -4,8 +4,8 @@ import 'package:android_chempionat/screeens/login_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../screeens/DiscoverBoardScreen.dart';
-import '../screeens/LandingScreen.dart';
+import '../screeens/discover_combats_screen.dart';
+import '../screeens/landing_screen.dart';
 
 
 part 'page_route.gr.dart';

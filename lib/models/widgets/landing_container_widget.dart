@@ -54,7 +54,7 @@ class LandingcontainerWidget extends StatelessWidget {
                       ),
                       child: Text(
                         text_title,
-                        style: AppTypography.NormalPoppins
+                        style: AppTypography.MainPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
                       ),
                   ),
                   //-------------подзаголовок-----------------------------
@@ -64,7 +64,7 @@ class LandingcontainerWidget extends StatelessWidget {
                   ),
                     child: Text(
                       text_desc,
-                      style: AppTypography.NormalPoppins
+                      style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
                     ),
                   ),
                   //-------------------------------Кнопка-----------------------------------
