@@ -67,23 +67,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingModel(
       text_title: 'Schedule Games With Friends ',
       text_desc: 'Easily create an upcoming event and get ready for battle. Yeah! real combat fella.',
-      button_widget: ElevatedButton(onPressed: (){context.router.push(LoginRoute());},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.background,
-          //
-          shape: const StadiumBorder(),
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16.0,
-            vertical: 16.0
+      button_widget: Container(
+        width: 224,
+        height: 58,
+        child: ElevatedButton(onPressed: (){context.router.push(LoginRoute());},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.background,
+            //
+            shape: const StadiumBorder(),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 16.0
+            ),
+            elevation: 0,
           ),
-          elevation: 0,
-        ),
-        child: Text(
-          'Let’s Combat!',
-              style: AppTypography.NormalPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
-          )
-        ),
+          child: Text(
+            'Let’s Combat!',
+                style: AppTypography.NormalPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
+            )
+          ),
+      ),
       picture_path: 'assets/3.png'
     ),
   ];
@@ -106,12 +110,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 itemBuilder: (context, index) {
                   final item = _pages[index];
                   //----------------Общий отступ от краев------------------------------
-                  return Padding(
-                    padding: EdgeInsetsGeometry.only(
-                      left: 16.0,
-                      bottom: 16.0
-                    ),
-                    child: Center(
+                  return SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.only(
+                        left: 16.0,
+                        bottom: 16.0
+                      ),
                       child: Column(
                         children: [
                           //------------Картинка-----------------------

@@ -6,12 +6,16 @@ class PhoneFieldModel extends StatelessWidget{
   final TextEditingController phoneController;
   final TextEditingController regController;
   final String? errMess;
+  final double phoneWight;
+  final double phoneRegWight;
 
   const PhoneFieldModel({
     super.key,
     required this.phoneController,
     required this.regController,
-    this.errMess
+    this.errMess,
+    required this.phoneWight,
+    required this.phoneRegWight,
   });
 
 
@@ -21,7 +25,7 @@ class PhoneFieldModel extends StatelessWidget{
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          width: 64,
+          width: phoneRegWight,
           //Юзаем готовый виджет
           child: CustomFieldWidget(
             controller: regController,
@@ -38,10 +42,10 @@ class PhoneFieldModel extends StatelessWidget{
           )
         ),
         SizedBox(
-          width: 45,
+          width: 15,
         ),
         SizedBox(
-          width: 187,
+          width: phoneWight,
           child: CustomFieldWidget(
             text_hint: 'yourPhone',
             controller: phoneController,

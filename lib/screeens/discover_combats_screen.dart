@@ -27,14 +27,14 @@ class DiscoverScreen extends StatelessWidget {
                 padding: EdgeInsetsGeometry.only(
                   top: 20,
                   left: 7,
-                  right: 59
+                  right: 172
                 ),
-              child: Text(
-                'Discover Combats',
-                style: TextStyle(
-                  fontFamily: 'RedHatText',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
+              child: SizedBox(
+                width: 107,
+                height: 66,
+                child: Text(
+                  'Discover Combats',
+                  style: AppTypography.TittlePoppins.copyWith(color: AppColors.background, fontSize: 22,letterSpacing: 0.33)
                 ),
               ),
             ),
@@ -44,28 +44,27 @@ class DiscoverScreen extends StatelessWidget {
             alignment: AlignmentGeometry.bottomCenter,
             child: Padding(
                 padding: EdgeInsetsGeometry.only(
-                  right: 10,
-                  left: 60
+                  right: 30,
                 ),
               child: Text(
-                'Tranding this week',
-                style: TextStyle(
-                  fontFamily: 'RedHatText',
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal
-                ),
+                'Filter',
+                style:AppTypography.TittlePoppins.copyWith(color: AppColors.background, fontSize: 12,letterSpacing: -0.33)
               ),
             ),
           ),
-          
+
         ],
         //----------------------поиск-------------------------
         bottom: PreferredSize(preferredSize: const Size.fromHeight(70),
           child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 30),
+              padding: const EdgeInsets.only(
+                left: 30,
+                right: 30,
+                bottom: 10
+              ),
               child: Container(
-                width: 190,
-                height: 30,
+                width: 315,
+                height: 41,
                 decoration: BoxDecoration(
                     color: AppColors.background,
                     borderRadius: BorderRadius.circular(38)
@@ -79,12 +78,7 @@ class DiscoverScreen extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 3,right: 2),
                         child: Text(
                           'Search Combat',
-                          style: TextStyle(
-                              color: AppColors.primary,
-                              fontFamily: 'RedHatText',
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                          ),
+                          style: AppTypography.MainPoppins.copyWith(color: AppColors.textMuted)
                         ),
                       )
                   ),
@@ -93,80 +87,107 @@ class DiscoverScreen extends StatelessWidget {
             )
           )
         ),
+        //______________________________________________________ТЕЛО________________________________
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(padding: EdgeInsetsGeometry.symmetric(
-              vertical: 23,
-              horizontal: 10
+            //----------------------трендинг-----------------------------
+            Padding(padding: EdgeInsetsGeometry.only(
+                left: 30,
+                top: 24,
+                bottom: 20
             ),
               child: ViewAllWidget(
-                  padding: 150 - 7,
+                  left_padding: 162,
                   func: (){},
                   text_heading: 'Trending this week'
               )
             ),
+            //-----------------Блок 1-------------------------------------
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: EdgeInsetsGeometry.only(
+                left: 30,
+                right: 30,
+                top: 23
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                left: 30,
+                right: 30,
+                top: 10
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 10
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 10
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
+            //---------------------топ популярности-------------------------------
             Padding(
-                padding: EdgeInsetsGeometry.symmetric(vertical: 20),
+                padding: EdgeInsetsGeometry.only(
+                    left: 30,
+                    top: 41,
+                    bottom: 20
+                ),
                 child: ViewAllWidget(
-                    padding: 150 - 22,
+                    left_padding: 150,
                     func: (){},
                     text_heading: 'Most Popular Players'
                 ),
-            ),
+            ),//------------ДВА ВИДЖЕТА--------------------------
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.only(
+                left: 30
+              ),
               child: Row(
                 children: [
                   PopularWidget(
-                      height: 100,
-                      wight: 615 - 92-325+16,
+                      height: 64,
+                      wight: 153,
                       Name: 'Scott Brown',
                       player_color: AppColors.Gold,
                       player_title: 'Gold player',
                       is_online: 'Online',
                       online_color: AppColors.Online),
                   Padding(
-                    padding: const EdgeInsetsGeometry.only(left: 5),
+                    padding: const EdgeInsetsGeometry.only(left: 9),
                     child: PopularWidget(
-                        height: 100,
-                        wight: 615 - 92-325+16,
+                        height: 64,
+                        wight:  153,
                         Name: 'Stone Stella',
                         player_color: AppColors.Grey,
                         player_title: 'Silver Player',
@@ -176,46 +197,67 @@ class DiscoverScreen extends StatelessWidget {
                 ],
               ),
             ),
+            //-------------------Gjcktlybt ------------------------------
             Padding(
-              padding: EdgeInsetsGeometry.symmetric(vertical: 20),
+              padding: EdgeInsetsGeometry.only(
+                left: 30,
+                top: 20
+              ),
               child: ViewAllWidget(
-                  padding: 190,
+                  left_padding: 180,
                   func: (){},
                   text_heading: 'Latest Combats'
               ),
             ),
+            //-----------Вторая часть---------------------------------
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 23
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 10
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 10
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 7),
+              padding: const EdgeInsets.only(
+                  left: 30,
+                  right: 30,
+                  top: 10
+              ),
               child: Combatwidget(
-                  height: 90,
-                  wight: 615 - 92,
+                  height: 64,
+                  wight: 315,
                   NameOne: 'Scott Brown',
                   NameTwo: 'Stone Stella'
               ),

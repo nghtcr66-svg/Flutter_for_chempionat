@@ -10,8 +10,14 @@ class LandingcontainerWidget extends StatelessWidget {
   final String text_title;
   final String text_desc;
   final String image_path;
-  final double img_wight;
+  // final double img_wight;
   final VoidCallback func;
+  final double header_wight;
+  final double header_height;
+  final double desc_wight;
+  final double desc_height;
+
+
 
   const LandingcontainerWidget({
     super.key,
@@ -21,7 +27,11 @@ class LandingcontainerWidget extends StatelessWidget {
     required this.text_desc,
     required this.image_path,
     required this.func,
-    required this.img_wight,
+    // required this.img_wight,
+    required this.header_wight,
+    required this.header_height,
+    required this.desc_wight,
+    required this.desc_height
   });
 
   @override
@@ -34,58 +44,78 @@ class LandingcontainerWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12.0)
       ),
       //============================ДВа виджета пополам=======================================
-      child: Row(
-        children: [
-          //----------------------------Текста и кнопка----------------------------
-          Padding(
-              padding: EdgeInsetsGeometry.only(
-                left: 5.0
-              ),
-              child: SizedBox(
-                width: wight/2.2,
-                height: height,
-              // -------------------------Заголовок и остальное в контейнере для ограничения --------------------------
-              child: Column(
-                children: [
-                  Padding(
-                      padding: EdgeInsetsGeometry.only(
-                        top: 23.0,
-                        right: 200
-                      ),
-                      child: Text(
-                        text_title,
-                        style: AppTypography.MainPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
-                      ),
-                  ),
-                  //-------------подзаголовок-----------------------------
-                  Padding(padding: EdgeInsetsGeometry.only(
-                      top: 10.0,
-                      left: 3,
-                  ),
-                    child: Text(
-                      text_desc,
-                      style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
-                    ),
-                  ),
-                  //-------------------------------Кнопка-----------------------------------
-                  Padding(padding: EdgeInsetsGeometry.only(
-                    right: 270
-                  ),
-                  child: IconButton(
-                     onPressed: func,
-                     icon: Icon(Icons.arrow_forward, color: AppColors.background,)
-                  )
-                  ),
-                ],
+        child: Stack(
+          children: [
+            //-----------------------------Картинка--------------------------------------------
+            Align(
+              alignment: AlignmentGeometry.centerRight,
+              child: Padding(padding: EdgeInsetsGeometry.only(right: 10.0),
+                child: Image.asset(
+                    image_path,
+                    // height: height,
+                    // width: img_wight,
+                    fit: BoxFit.fill
+                ),
               ),
             ),
-          ),
-          //-----------------------------Картинка--------------------------------------------
-          Padding(padding: EdgeInsetsGeometry.only(right: 10.0),
-            child: Image.asset(image_path, height: height, width: img_wight,fit: BoxFit.fill),
-          )
-        ],
-      ),
+            //----------------------------Текста и кнопка----------------------------
+            Padding(
+                padding: EdgeInsetsGeometry.only(
+                  left: 5.0
+                ),
+                // child: SizedBox(
+                //   width: wight/3,
+                //   height: height,
+                // -------------------------Заголовок и остальное в контейнере для ограничения --------------------------
+                child: Column(
+                  children: [
+                    Padding(
+                        padding: EdgeInsetsGeometry.only(
+                          top: 23.0,
+                          right: wight-header_wight-54
+                        ),
+                        child: SizedBox(
+                          width: header_wight,
+                          height: header_height,
+                          child: Text(
+                            text_title,
+                            style: AppTypography.MainPoppins.copyWith(color: AppColors.background, fontWeight: FontWeight.bold)
+                          ),
+                        ),
+                    ),
+                    //-------------подзаголовок-----------------------------
+                    SingleChildScrollView(
+                      child: Padding(padding: EdgeInsetsGeometry.only(
+                          top: 10.0,
+                          right: wight-desc_wight-54,
+                      ),
+                        child: SizedBox(
+                          width: desc_wight,
+                          height: desc_height,
+                          child: Text(
+                            text_desc,
+                            style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
+                          ),
+                        ),
+                      ),
+                    ),
+                    //-------------------------------Кнопка-----------------------------------
+                    Padding(padding: EdgeInsetsGeometry.only(
+                      right: wight-54-14,
+                      top: 14
+                    ),
+                    child: IconButton(
+                       onPressed: func,
+                       icon: Icon(Icons.arrow_forward, color: AppColors.background,)
+                    )
+                    ),
+                  ],
+                ),
+              ),
+            // ),
+        
+          ],
+        ),
     );
   }
 }

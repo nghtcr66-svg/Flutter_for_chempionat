@@ -21,23 +21,27 @@ class CreateAccountScreen extends StatelessWidget{
   final formdata = OnboardingModel(
     text_title: 'Create Account',
     text_desc: 'Hi, kindly fill in the form to proceed combat',
-    button_widget: ElevatedButton(onPressed: (){},
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.background,
-          //
-          shape: const StadiumBorder(),
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16.0,
-            vertical: 16.0
+    button_widget: Container(
+      width: 224,
+      height: 58,
+      child: ElevatedButton(onPressed: (){},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.background,
+            //
+            shape: const StadiumBorder(),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 16.0
+            ),
+            elevation: 0,
           ),
-          elevation: 0,
-        ),
-        child: Text(
-          'Let’s Combat!',
-              style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
-          )
-        ),
+          child: Text(
+            'Let’s Combat!',
+                style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
+            )
+          ),
+    ),
     picture_path: 'assets/4.png'
   );
 
@@ -56,7 +60,7 @@ class CreateAccountScreen extends StatelessWidget{
               //---------------------Картинка--------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.only(
-                  left: 24.0,
+                  left: (375-324-10),
                   top: 78.0
                 ),
                 child: Image.asset(formdata.picture_path),
@@ -65,12 +69,12 @@ class CreateAccountScreen extends StatelessWidget{
               Padding(
                 padding: EdgeInsetsGeometry.only(
                   top: 40.0,
-                  left: 24.0,
+                  right: 375-204-((375-174)/2),
                 ),
                 child: Text(
                   formdata.text_title,
                   textAlign: TextAlign.center,
-                    style: AppTypography.MainPoppins
+                    style: AppTypography.TittlePoppins
                 ),
               ),
               //-----------Текст верхний черный---------------------------------
@@ -88,7 +92,7 @@ class CreateAccountScreen extends StatelessWidget{
               //------------Поле Имя---------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: 56,
+                  horizontal: (375-263)/2,
                   vertical: 24
                 ),
                 child: CustomFieldWidget(
@@ -99,7 +103,7 @@ class CreateAccountScreen extends StatelessWidget{
               //-----------Поле юзернейм-------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: 56,
+                  horizontal: (375-263)/2,
                   vertical: 24
                 ),
                 child: CustomFieldWidget(
@@ -110,18 +114,20 @@ class CreateAccountScreen extends StatelessWidget{
               //--------Номер телефона---------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: 56,
+                  horizontal: (375-263)/2,
                   vertical: 24
                 ),
                 child: PhoneFieldModel(
+                  phoneRegWight: 35,
                   phoneController:TextEditingController() ,
-                  regController: TextEditingController()
+                  regController: TextEditingController(),
+                  phoneWight: 210,
                 )
               ),
               //-------Пароль----------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: 56,
+                  horizontal: (375-263)/2,
                   vertical: 24
                 ),
                 child: PasswordFieldwidget(
@@ -132,7 +138,7 @@ class CreateAccountScreen extends StatelessWidget{
               //-------Подтверждение пароля---------------------------------------------------
               Padding(
                 padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: 56,
+                  horizontal: (375-263)/2,
                   vertical: 24
                 ),
                 child: PasswordFieldwidget(

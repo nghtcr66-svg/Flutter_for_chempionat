@@ -36,74 +36,99 @@ class PopularWidget extends StatelessWidget {
       child: Row(
         children: [
           Padding(padding: EdgeInsetsGeometry.only(
-            left: 15,
-            top: 10,
-            bottom: 10
+            left: 11,
+            top: 11,
+            bottom: 11
           ),
           child: Connectwithwidget(
               color: AppColors.textDark,
               icon: Image.asset('assets/checker.png'),
               onTap: (){},
-              width: 38,
-              height: 38
+              width: 37.27,
+              height: 37.27
           ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 10,
-              bottom: 10,
-              right: 5
-            ),
-              child: Column(
-                children: [
-                  Text(
-                    Name,
-                    style: AppTypography.TittleHat.copyWith(color: AppColors.textDark, fontSize: 11),
-                  ),
-                  Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 7),
-                    child: Row(
-                      children: [
-                        Icon(Icons.military_tech, color: player_color,),
-                        Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 5),
-                        child: Text(
-                          player_title,
-                          style: AppTypography.RegularHat.copyWith(color: player_color, fontSize: 11),
-                        ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Row(
-                      children: [
-                        Text(
-                          'Status',
-                          style: AppTypography.RegularHat.copyWith(fontSize: 11),
-                        ),
-                        Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 5),
-                          child: Text(
-                            is_online,
-                            style: AppTypography.RegularHat.copyWith(color: online_color, fontSize: 11),
-                          ),
-                        ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Category’s:',
-                        style: AppTypography.TittleHat.copyWith(color: AppColors.textDark, fontSize: 10)
-                      ),
-                      Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 5),
-                        child: Text(
-                          'Action, Soccer...',
-                            style: AppTypography.TittleHat.copyWith(fontSize: 10)
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+          //-------ПЕРВОЕ ПРАВИЛО - display=flex;---------
+          Flexible(
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 6.73,
+                top: 12
               ),
-            ),
+                child: Column(
+                  //-----нужно чтобы текст нах**й не полетел--------------------
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    //---------------------ИМЯ--------------------------
+                    Text(
+                      Name,
+                      style: AppTypography.TittleHat.copyWith(color: AppColors.textDark, fontSize: 6, letterSpacing: 0.3),
+                    ),
+                    //-------РЕЙТИНГ---------------
+                    Padding(padding: EdgeInsetsGeometry.only(
+                      top: 1
+                    ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 6,
+                            height: 6,
+                              child: Image.asset('assets/rc.png'),
+                          ),
+                          Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 5),
+                          child: Text(
+                            player_title,
+                            style: AppTypography.RegularHat.copyWith(color: player_color, fontSize: 9),
+                          ),
+                          )
+                        ],
+                      ),
+                    ),
+                    //-------ТИТЛ-----------------------------------------
+                    Padding(
+                      padding: const EdgeInsets.only(
+                      ),
+                      child: Row(
+                          children: [
+                            Text(
+                              'Status',
+                              style: AppTypography.RegularHat.copyWith(fontSize: 6),
+                            ),
+                            // Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 5),
+                              Text(
+                                is_online,
+                                style: AppTypography.RegularHat.copyWith(color: online_color, fontSize: 6),
+                              ),
+                            // ),
+                        ],
+                      ),
+                    ),
+                    //----------------------Категроии--------------
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 1
+                      ),
+                      child: Row(
+                        children: [
+                          Text(
+                            'Category’s:',
+                            style: AppTypography.TittleHat.copyWith(color: AppColors.textDark, fontSize: 6)
+                          ),
+                          Padding(padding: EdgeInsetsGeometry.only(
+                            left: 4
+                          ),
+                            child: Text(
+                              'Action, Soccer...',
+                                style: AppTypography.TittleHat.copyWith(fontSize: 6)
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+          ),
         ],
       ),
     );
