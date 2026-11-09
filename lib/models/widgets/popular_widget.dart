@@ -1,3 +1,4 @@
+import 'package:android_chempionat/models/widgets/avatar_widget.dart';
 import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -40,13 +41,7 @@ class PopularWidget extends StatelessWidget {
             top: 11,
             bottom: 11
           ),
-          child: Connectwithwidget(
-              color: AppColors.textDark,
-              icon: Image.asset('assets/checker.png'),
-              onTap: (){},
-              width: 37.27,
-              height: 37.27
-          ),
+          child: AvatarWidget(wight: 37.27, height: 37.27, onTap: (){}, dec: Border.all( style: BorderStyle.none,) )
           ),
           //-------ПЕРВОЕ ПРАВИЛО - display=flex;---------
           Flexible(

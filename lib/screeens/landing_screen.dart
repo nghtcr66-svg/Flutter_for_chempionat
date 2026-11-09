@@ -1,4 +1,5 @@
 import 'package:android_chempionat/app_refs.dart';
+import 'package:android_chempionat/models/widgets/avatar_widget.dart';
 import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
 import 'package:android_chempionat/models/widgets/landing_container_widget.dart';
 import 'package:android_chempionat/page_route/page_route.dart';
@@ -23,16 +24,26 @@ class LandingScreen extends StatelessWidget {
         backgroundColor: AppColors.background,
         foregroundColor: AppColors.primary,
         automaticallyImplyLeading: false,
-        actions: [
-            Padding(padding: EdgeInsetsGeometry.only(right: 215-47,left: 30),
-              child: IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 30),
+          child: SizedBox(
+            width: 17.5,
+            height: 10,
+            child: IconButton(
+                onPressed: (){context.router.push((MenuRoute()));},
+                icon: Image.asset("h.png",fit: BoxFit.cover)
             ),
+          ),
+        ),
+        actions: [
           Padding(padding: EdgeInsetsGeometry.only(right: 10),
-          child: Connectwithwidget(
-              width: 24,
+          child: AvatarWidget(
+              dec: Border.all(
+                    color: AppColors.primary,
+                    width: 2,
+                    ),
+              wight: 24,
               height: 24,
-              color: Colors.black,
-              icon: Image.asset('assets/checker.png'),
               onTap: (){context.router.push((DiscoverRoute()));}
             )
           ),
@@ -58,10 +69,9 @@ class LandingScreen extends StatelessWidget {
                       text_desc: 'Easily schedule event/game then find like minded players for battle. You up for it?',
                       image_path: 'assets/6.png',
                       func: (){},
-                      header_wight: 56,
                       header_height: 18,
                       desc_wight: 165,
-                      desc_height: 45,
+                      arrow_padding: 33,
                   ),
                 ),
                 //------------------Вторая---------------------------------------
@@ -73,10 +83,9 @@ class LandingScreen extends StatelessWidget {
                     text_desc: 'Find out what’s new and compete among players with new challenges and earn cash with game points ',
                     image_path: 'assets/7.png',
                     func: (){},
-                    header_wight: 56,
                     header_height: 18,
                     desc_wight: 175,
-                    desc_height: 30,
+                    arrow_padding: 48,
                   ),
                 ),
                 //-----------------------Третья-------------------------------------------
@@ -88,10 +97,9 @@ class LandingScreen extends StatelessWidget {
                     text_desc: 'All data from previous an upcoming games can be found here ',
                     image_path: 'assets/8.png',
                     func: (){},
-                    header_wight: 112,
                     header_height: 18,
                     desc_wight: 165,
-                    desc_height: 60,
+                    arrow_padding: 18,
                   ),
                 ),
                 //----------------------Чертвертая-------------------------------------------
@@ -103,10 +111,9 @@ class LandingScreen extends StatelessWidget {
                     text_desc: 'Found the profile of a player that interests you? Start conversation',
                     image_path: 'assets/9.png',
                     func: (){},
-                    header_wight: 100,
                     header_height: 18,
                     desc_wight: 165,
-                    desc_height: 45,
+                    arrow_padding: 33,
                   ),
                 ),
               ],

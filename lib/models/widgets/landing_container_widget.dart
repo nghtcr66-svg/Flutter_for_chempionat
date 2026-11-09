@@ -12,10 +12,9 @@ class LandingcontainerWidget extends StatelessWidget {
   final String image_path;
   // final double img_wight;
   final VoidCallback func;
-  final double header_wight;
   final double header_height;
   final double desc_wight;
-  final double desc_height;
+  final double arrow_padding;
 
 
 
@@ -28,10 +27,9 @@ class LandingcontainerWidget extends StatelessWidget {
     required this.image_path,
     required this.func,
     // required this.img_wight,
-    required this.header_wight,
     required this.header_height,
     required this.desc_wight,
-    required this.desc_height
+    required this.arrow_padding,
   });
 
   @override
@@ -61,21 +59,20 @@ class LandingcontainerWidget extends StatelessWidget {
             //----------------------------Текста и кнопка----------------------------
             Padding(
                 padding: EdgeInsetsGeometry.only(
-                  left: 5.0
+                  left: 24.0
                 ),
                 // child: SizedBox(
                 //   width: wight/3,
                 //   height: height,
                 // -------------------------Заголовок и остальное в контейнере для ограничения --------------------------
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                         padding: EdgeInsetsGeometry.only(
                           top: 23.0,
-                          right: wight-header_wight-54
                         ),
                         child: SizedBox(
-                          width: header_wight,
                           height: header_height,
                           child: Text(
                             text_title,
@@ -87,22 +84,19 @@ class LandingcontainerWidget extends StatelessWidget {
                     SingleChildScrollView(
                       child: Padding(padding: EdgeInsetsGeometry.only(
                           top: 10.0,
-                          right: wight-desc_wight-54,
                       ),
                         child: SizedBox(
                           width: desc_wight,
-                          height: desc_height,
                           child: Text(
                             text_desc,
-                            style: AppTypography.NormalPoppins.copyWith(color: AppColors.background)
+                            style: AppTypography.NormalPoppins.copyWith(color: AppColors.background, letterSpacing: -0.3)
                           ),
                         ),
                       ),
                     ),
                     //-------------------------------Кнопка-----------------------------------
                     Padding(padding: EdgeInsetsGeometry.only(
-                      right: wight-54-14,
-                      top: 14
+                      top: arrow_padding,
                     ),
                     child: IconButton(
                        onPressed: func,
@@ -113,7 +107,6 @@ class LandingcontainerWidget extends StatelessWidget {
                 ),
               ),
             // ),
-        
           ],
         ),
     );

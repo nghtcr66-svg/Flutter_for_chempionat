@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../screeens/discover_combats_screen.dart';
 import '../screeens/landing_screen.dart';
+import '../screeens/menu_screen.dart';
 
 
 part 'page_route.gr.dart';
@@ -20,5 +21,6 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: LoginRoute.page),
     AutoRoute(page: LandingRoute.page),
     AutoRoute(page: DiscoverRoute.page),
+    AutoRoute(page: MenuRoute.page),
   ];
 }

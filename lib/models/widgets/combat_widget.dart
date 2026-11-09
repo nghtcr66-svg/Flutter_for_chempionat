@@ -1,4 +1,5 @@
 import 'package:android_chempionat/app_refs.dart';
+import 'package:android_chempionat/models/widgets/avatar_widget.dart';
 import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -32,39 +33,37 @@ class Combatwidget extends StatelessWidget {
       ),
         child: Row(
           children: [
-            Flexible(
-              child: Column(
-                children: [
-                  Padding(
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsetsGeometry.only(
+                    left: 21,
+                    top: 14,
+                    bottom: 2.73
+                  ),
+                  child: AvatarWidget(
+                      wight: 23,
+                      height: 23,
+                      onTap: (){},
+                      dec: Border.all(
+                        style: BorderStyle.none,
+                      ),)
+                ),
+                //----------------------------Текст имени 1-------------------------
+                Padding(
                     padding: EdgeInsetsGeometry.only(
-                      left: 21,
-                      top: 14,
-                      bottom: 2.73
+                      bottom: 11,
+                      left: 16
                     ),
-                    child: Connectwithwidget(
-                        width: 23,
-                        height: 23,
-                        color: AppColors.textDark,
-                        icon: Image.asset('assets/checker.png'),
-                        onTap: (){}
+                    child: Align(
+                      alignment: AlignmentGeometry.center,
+                      child: Text(
+                        NameOne,
+                        style: AppTypography.MainHat.copyWith(fontSize: 6)
+                      ),
                     ),
-                  ),
-                  //----------------------------Текст имени 1-------------------------
-                  Padding(
-                      padding: EdgeInsetsGeometry.only(
-                        bottom: 11,
-                        left: 16
-                      ),
-                      child: Align(
-                        alignment: AlignmentGeometry.center,
-                        child: Text(
-                          NameOne,
-                          style: AppTypography.MainHat.copyWith(fontSize: 6)
-                        ),
-                      ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
             //--------------------------VS-----------------------------------------
             Padding(padding: EdgeInsetsGeometry.only(
@@ -85,13 +84,13 @@ class Combatwidget extends StatelessWidget {
                     top: 14,
                     bottom: 2.73
                   ),
-                  child: Connectwithwidget(
-                      width: 23,
-                      height: 23,
-                      color: AppColors.textDark,
-                      icon: Image.asset('assets/checker.png'),
-                      onTap: (){}
-                  ),
+                  child: AvatarWidget(
+                    wight: 23,
+                    height: 23,
+                    onTap: (){},
+                    dec: Border.all(
+                      style: BorderStyle.none,
+                    ),)
                 ),
                 //----------------------------Текст имени 2-------------------------
                 Padding(
@@ -110,28 +109,30 @@ class Combatwidget extends StatelessWidget {
               ],
             ),
             //---------------GAME----------------------------------
-            Column(
-              children: [
-                Padding(padding: EdgeInsetsGeometry.only(
-                  left: 27,
-                  bottom: 5,
-                  top: 20
-                ),
-                  child: Text(
-                    'Game  Name:',
-                    style: AppTypography.RegularHat.copyWith(fontSize: 6),
+            Flexible(
+              child: Column(
+                children: [
+                  Padding(padding: EdgeInsetsGeometry.only(
+                    left: 27,
+                    bottom: 5,
+                    top: 20
                   ),
-                ),
-                Padding(padding: EdgeInsetsGeometry.only(
-                  left: 37,
-                  bottom: 21
-                ),
-                  child: Text(
-                    'Halo 5',
-                    style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
+                    child: Text(
+                      'Game  Name:',
+                      style: AppTypography.RegularHat.copyWith(fontSize: 6),
+                    ),
                   ),
-                ),
-              ],
+                  Padding(padding: EdgeInsetsGeometry.only(
+                    left: 27,
+                    bottom: 21
+                  ),
+                    child: Text(
+                      'Halo 5',
+                      style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
+                    ),
+                  ),
+                ],
+              ),
             ),
             //------------------------------STatus--------------------------------------
             Column(
