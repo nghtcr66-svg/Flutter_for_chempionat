@@ -57,66 +57,68 @@ class LandingScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsetsGeometry.only(left: 30),
-            child: Column(
-              children: [
-                //-------------Первая-------------------------------
-                Padding(padding: EdgeInsetsGeometry.only(top: 116,bottom: 5),
-                  child: LandingcontainerWidget(
+          padding: EdgeInsets.zero,
+            child: Center(
+              child: Column(
+                children: [
+                  //-------------Первая-------------------------------
+                  Padding(padding: EdgeInsetsGeometry.only(top: 24, bottom: 5),
+                    child: LandingcontainerWidget(
+                        height: _height,
+                        wight: _widht,
+                        text_title: 'Schedule',
+                        text_desc: 'Easily schedule event/game then find like minded players for battle. You up for it?',
+                        image_path: 'assets/6.png',
+                        func: (){},
+                        header_height: 18,
+                        desc_wight: 165,
+                        arrow_padding: 33,
+                    ),
+                  ),
+                  //------------------Вторая---------------------------------------
+                  Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 5),
+                    child: LandingcontainerWidget(
                       height: _height,
                       wight: _widht,
-                      text_title: 'Schedule',
-                      text_desc: 'Easily schedule event/game then find like minded players for battle. You up for it?',
-                      image_path: 'assets/6.png',
+                      text_title: 'Discover  Combats',
+                      text_desc: 'Find out what’s new and compete among players with new challenges and earn cash with game points ',
+                      image_path: 'assets/7.png',
+                      func: (){},
+                      header_height: 18,
+                      desc_wight: 175,
+                      arrow_padding: 48,
+                    ),
+                  ),
+                  //-----------------------Третья-------------------------------------------
+                  Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 5),
+                    child: LandingcontainerWidget(
+                      height: _height,
+                      wight: _widht,
+                      text_title: 'Statistics',
+                      text_desc: 'All data from previous an upcoming games can be found here ',
+                      image_path: 'assets/8.png',
+                      func: (){},
+                      header_height: 18,
+                      desc_wight: 165,
+                      arrow_padding: 18,
+                    ),
+                  ),
+                  //----------------------Чертвертая-------------------------------------------
+                  Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 5),
+                    child: LandingcontainerWidget(
+                      height: _height,
+                      wight: _widht,
+                      text_title: 'Message Players',
+                      text_desc: 'Found the profile of a player that interests you? Start conversation',
+                      image_path: 'assets/9.png',
                       func: (){},
                       header_height: 18,
                       desc_wight: 165,
                       arrow_padding: 33,
+                    ),
                   ),
-                ),
-                //------------------Вторая---------------------------------------
-                Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 5),
-                  child: LandingcontainerWidget(
-                    height: _height,
-                    wight: _widht,
-                    text_title: 'Discover  Combats',
-                    text_desc: 'Find out what’s new and compete among players with new challenges and earn cash with game points ',
-                    image_path: 'assets/7.png',
-                    func: (){},
-                    header_height: 18,
-                    desc_wight: 175,
-                    arrow_padding: 48,
-                  ),
-                ),
-                //-----------------------Третья-------------------------------------------
-                Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 5),
-                  child: LandingcontainerWidget(
-                    height: _height,
-                    wight: _widht,
-                    text_title: 'Statistics',
-                    text_desc: 'All data from previous an upcoming games can be found here ',
-                    image_path: 'assets/8.png',
-                    func: (){},
-                    header_height: 18,
-                    desc_wight: 165,
-                    arrow_padding: 18,
-                  ),
-                ),
-                //----------------------Чертвертая-------------------------------------------
-                Padding(padding: EdgeInsetsGeometry.symmetric(vertical: 5),
-                  child: LandingcontainerWidget(
-                    height: _height,
-                    wight: _widht,
-                    text_title: 'Message Players',
-                    text_desc: 'Found the profile of a player that interests you? Start conversation',
-                    image_path: 'assets/9.png',
-                    func: (){},
-                    header_height: 18,
-                    desc_wight: 165,
-                    arrow_padding: 33,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

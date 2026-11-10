@@ -10,8 +10,7 @@ class MenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           actions: [
             Padding(
@@ -22,12 +21,16 @@ class MenuScreen extends StatelessWidget {
             )
           ],
         ),
-        body: Column(
+        body: SingleChildScrollView(
+        child: Column(
           children: [
-            SizedBox(
-              child: Row(
-                children: [
-                  AvatarWidget(
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 60
+                  ),
+                  child: AvatarWidget(
                       wight: 56,
                       height: 56,
                       onTap: (){},
@@ -35,62 +38,67 @@ class MenuScreen extends StatelessWidget {
                         color: AppColors.primary,
                         width: 2,)
                   ),
-                  Column(
-                    children: [
-                      Text(
-                        'Stone Stellar',style: AppTypography.TittlePoppins.copyWith(letterSpacing: -0.3),
+                ),
+                Column(
+                  children: [
+                    Text(
+                      'Stone Stellar',style: AppTypography.TittlePoppins.copyWith(letterSpacing: -0.3),
 
-                      ),
-                      Row(
-                        children: [
-                          Image.asset('assets/checker.png'),
-                          Padding(padding: EdgeInsetsGeometry.only(left: 5),
-                          child: Text(
-                            'Gold Player',
-                            style: AppTypography.MainPoppins.copyWith(
-                              color: AppColors.Gold,
-                              letterSpacing: -0.3
-                            ),
+                    ),
+                    Row(
+                      children: [
+                        Image.asset('assets/rc.png'),
+                        Padding(padding: EdgeInsetsGeometry.only(left: 5),
+                        child: Text(
+                          'Gold Player',
+                          style: AppTypography.MainPoppins.copyWith(
+                            color: AppColors.Gold,
+                            letterSpacing: -0.3
                           ),
-                          )
-                        ],
-                      ),
-                      MenuComponentWidget(
-                          icon: Image.asset('h.png'),
-                          inner_padding: 4.53,
-                          text: 'My Profile'
-                      ),
-                      MenuComponentWidget(
-                          icon: Image.asset('h.png'),
-                          inner_padding: 3.54,
-                          text: 'Schedule'
-                      ),
-                      MenuComponentWidget(
-                          icon: Image.asset('h.png'),
-                          inner_padding: 4.53,
-                          text: 'Statistics'
-                      ),
-                      MenuComponentWidget(
-                          icon: Image.asset('h.png'),
-                          inner_padding: 27.4,
-                          text: 'Discover Combat'
-                      ),
-                      MenuComponentWidget(
-                          icon: Image.asset('h.png'),
-                          inner_padding: 24.4,
-                          text: 'Chat'
-                      ),
-                      MenuComponentWidget(
-                          icon: Image.asset('h.png'),
-                          inner_padding: 22.97,
-                          text: 'Change App Skin'
-                      ),
+                        ),
+                        )
+                      ],
+                    ),
 
-                    ],
-                  )
-                ],
-              ),
-            )
+
+                  ],
+                )
+              ],
+            ),
+            MenuComponentWidget(
+                icon: Image.asset('pi.png'),
+                inner_padding: 24.1,
+                text: 'My Profile'
+            ),
+            MenuComponentWidget(
+                icon: Image.asset('pi.png'),
+                inner_padding: 3.54,
+                text: 'Schedule'
+            ),
+            MenuComponentWidget(
+                icon: Image.asset('pi.png'),
+                inner_padding: 4.53,
+                text: 'Statistics'
+            ),
+            MenuComponentWidget(
+                icon: Image.asset('pi.png'),
+                inner_padding: 27.4,
+                text: 'Discover Combat'
+            ),
+            MenuComponentWidget(
+                icon: Image.asset('pi.png'),
+                inner_padding: 24.4,
+                text: 'Chat'
+            ),
+            MenuComponentWidget(
+                icon: Image.asset('pi.png'),
+                inner_padding: 22.97,
+                text: 'Change App Skin'
+            ),
+
+
+
+
           ],
         ),
       ),

@@ -96,6 +96,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: AppColors.background,
       body: Center(
         child: Column(
           children: [
@@ -117,6 +118,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         bottom: 16.0
                       ),
                       child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           //------------Картинка-----------------------
                           Padding(padding: EdgeInsetsGeometry.only(
@@ -149,12 +151,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             ),
                           ),
                           //------------------Виджет кнопки перехода-------------
-                          Padding(padding: EdgeInsetsGeometry.only(
-                              top: 40.0,
-                              left: 3.0,
-                              right: 14.0,
+                          Align(
+                            alignment: AlignmentGeometry.center,
+                            child: Padding(padding: EdgeInsetsGeometry.only(
+                                top: 40.0,
+                              ),
+                              child: item.button_widget,
                             ),
-                            child: item.button_widget,
                           ),
                         ],
                       ),

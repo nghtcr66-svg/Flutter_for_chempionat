@@ -58,12 +58,14 @@ class LoginScreen extends StatelessWidget{
       body: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: EdgeInsetsGeometry.only(
-                  top: 28.0,
-                  right: 375 - 323
+              Align(
+                alignment: AlignmentGeometry.centerStart,
+                child: Padding(
+                  padding: EdgeInsetsGeometry.only(
+                    top: 28.0,
+                  ),
+                  child: Image.asset(form_data.picture_path),
                 ),
-                child: Image.asset(form_data.picture_path),
               ),
               Padding(
                 padding: EdgeInsetsGeometry.only(

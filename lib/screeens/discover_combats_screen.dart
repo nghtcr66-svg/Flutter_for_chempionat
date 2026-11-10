@@ -95,10 +95,10 @@ class DiscoverScreen extends StatelessWidget {
             Padding(padding: EdgeInsetsGeometry.only(
                 left: 30,
                 top: 24,
-                bottom: 20
+                bottom: 20,
+              right: 29.8
             ),
               child: ViewAllWidget(
-                  left_padding: 162,
                   func: (){},
                   text_heading: 'Trending this week'
               )
@@ -161,10 +161,10 @@ class DiscoverScreen extends StatelessWidget {
                 padding: EdgeInsetsGeometry.only(
                     left: 30,
                     top: 41,
-                    bottom: 20
+                    bottom: 20,
+                  right: 30
                 ),
                 child: ViewAllWidget(
-                    left_padding: 150,
                     func: (){},
                     text_heading: 'Most Popular Players'
                 ),
@@ -201,10 +201,10 @@ class DiscoverScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsetsGeometry.only(
                 left: 30,
-                top: 20
+                top: 20,
+                right: 30
               ),
               child: ViewAllWidget(
-                  left_padding: 180,
                   func: (){},
                   text_heading: 'Latest Combats'
               ),
