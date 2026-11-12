@@ -78,6 +78,14 @@ flutter:
     - assets/rc.png
     - assets/h.png
     - assets/pi.png
+    - assets/sm.png
+    - assets/ch.png
+    - assets/chli.png
+    - assets/chs.png
+    - assets/li.png
+    - assets/lp.png
+    - assets/si.png
+    - assets/sic.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
