@@ -1,8 +1,11 @@
-import 'package:android_chempionat/app_refs.dart';
-import 'package:android_chempionat/models/widgets/avatar_widget.dart';
-import 'package:android_chempionat/models/widgets/menu_component_widget.dart';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:my_ui_kit/app_refs.dart';
+import 'package:my_ui_kit/models/widgets/avatar_widget.dart';
+import 'package:my_ui_kit/models/widgets/menu_component_widget.dart';
+
+
 
 @RoutePage()
 class MenuScreen extends StatelessWidget {

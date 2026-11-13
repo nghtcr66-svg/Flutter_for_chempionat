@@ -1,8 +1,9 @@
-import 'package:android_chempionat/app_refs.dart';
-import 'package:android_chempionat/models/widgets/combat_widget.dart';
-import 'package:android_chempionat/models/widgets/popular_widget.dart';
+
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:my_ui_kit/app_refs.dart';
+import 'package:my_ui_kit/models/widgets/combat_widget.dart';
+import 'package:my_ui_kit/models/widgets/popular_widget.dart';
 
 import '../models/widgets/view_all_widget.dart';
 

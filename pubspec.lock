@@ -464,6 +464,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  my_ui_kit:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: a75e5ddd6139bc65aff96e18bd84a0656494225c
+      url: "https://github.com/nghtcr66-svg/UIkit_flutter.git"
+    source: git
+    version: "0.0.1"
   objective_c:
     dependency: transitive
     description:

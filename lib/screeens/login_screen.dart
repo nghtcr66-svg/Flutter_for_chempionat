@@ -1,13 +1,14 @@
-import 'package:android_chempionat/app_refs.dart';
-import 'package:android_chempionat/models/onboarding_model.dart';
-import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
-import 'package:android_chempionat/models/widgets/custom_field_widget.dart';
-import 'package:android_chempionat/models/widgets/password_field_widget.dart';
+
 import 'package:android_chempionat/page_route/page_route.dart';
 import 'package:android_chempionat/screeens/landing_screen.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_ui_kit/app_refs.dart';
+import 'package:my_ui_kit/models/onboarding_model.dart';
+import 'package:my_ui_kit/models/widgets/connect_with_widget.dart';
+import 'package:my_ui_kit/models/widgets/custom_field_widget.dart';
+import 'package:my_ui_kit/models/widgets/password_field_widget.dart';
 
 @RoutePage()
 class LoginScreen extends StatelessWidget{

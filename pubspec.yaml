@@ -37,6 +37,8 @@ dependencies:
   google_fonts: ^9.0.0
   smooth_page_indicator: ^3.0.0
   auto_route: ^11.2.0
+  my_ui_kit:
+    git: https://github.com/nghtcr66-svg/UIkit_flutter.git
 
 dev_dependencies:
   flutter_test:
@@ -63,29 +65,29 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/1.png
-    - assets/2.png
-    - assets/3.png
-    - assets/4.png
-    - assets/5.png
-    - assets/6.png
-    - assets/7.png
-    - assets/8.png
-    - assets/9.png
-    - assets/checker.png
-    - assets/Access Icon.png
-    - assets/rc.png
-    - assets/h.png
-    - assets/pi.png
-    - assets/sm.png
-    - assets/ch.png
-    - assets/chli.png
-    - assets/chs.png
-    - assets/li.png
-    - assets/lp.png
-    - assets/si.png
-    - assets/sic.png
+#  assets:
+#    - assets/1.png
+#    - assets/2.png
+#    - assets/3.png
+#    - assets/4.png
+#    - assets/5.png
+#    - assets/6.png
+#    - assets/7.png
+#    - assets/8.png
+#    - assets/9.png
+#    - assets/checker.png
+#    - assets/Access Icon.png
+#    - assets/rc.png
+#    - assets/h.png
+#    - assets/pi.png
+#    - assets/sm.png
+#    - assets/ch.png
+#    - assets/chli.png
+#    - assets/chs.png
+#    - assets/li.png
+#    - assets/lp.png
+#    - assets/si.png
+#    - assets/sic.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -99,23 +101,23 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-     - family: RedHatText
-       fonts:
-         - asset: assets/fonts/RedHat/RedHatText-Bold.ttf
-           weight: 700
-         - asset: assets/fonts/RedHat/RedHatText-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/RedHat/RedHatText-Regular.ttf
-           weight: 400
-     - family: Poppins
-       fonts:
-         - asset: assets/fonts/Poppins/Poppins-Bold.ttf
-           weight: 700
-         - asset: assets/fonts/Poppins/Poppins-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
-           weight: 400
+#  fonts:
+#     - family: RedHatText
+#       fonts:
+#         - asset: assets/fonts/RedHat/RedHatText-Bold.ttf
+#           weight: 700
+#         - asset: assets/fonts/RedHat/RedHatText-Medium.ttf
+#           weight: 500
+#         - asset: assets/fonts/RedHat/RedHatText-Regular.ttf
+#           weight: 400
+#     - family: Poppins
+#       fonts:
+#         - asset: assets/fonts/Poppins/Poppins-Bold.ttf
+#           weight: 700
+#         - asset: assets/fonts/Poppins/Poppins-Medium.ttf
+#           weight: 500
+#         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
+#           weight: 400
 
   #   - family: Trajan Pro
   #     fonts:

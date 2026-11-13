@@ -1,12 +1,13 @@
-import 'package:android_chempionat/app_refs.dart';
-import 'package:android_chempionat/models/widgets/avatar_widget.dart';
-import 'package:android_chempionat/models/widgets/connect_with_widget.dart';
-import 'package:android_chempionat/models/widgets/landing_container_widget.dart';
-import 'package:android_chempionat/page_route/page_route.dart';
+
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_ui_kit/app_refs.dart';
+import 'package:my_ui_kit/models/widgets/avatar_widget.dart';
+import 'package:my_ui_kit/models/widgets/landing_container_widget.dart';
+
+import '../page_route/page_route.dart';
 
 
 @RoutePage()
